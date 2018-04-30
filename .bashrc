@@ -91,3 +91,5 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${SYSTEMC_HOME}/lib-linux64
 if [ "x$TOS_ENV_UP" != 'x23' ]; then source ~/wsnpr/tos.env; fi
 
 export PROMPT_COMMAND="pwd > /tmp/whereami"
+
+export EDITOR=vim
