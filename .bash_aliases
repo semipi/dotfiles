@@ -9,6 +9,8 @@ alias 4..=.....
 alias ll='ls -l'
 alias la='ls -A'
 
+alias vi="vim"
+
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
