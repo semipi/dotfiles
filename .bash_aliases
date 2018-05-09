@@ -8,6 +8,7 @@ alias 4..=.....
 
 alias ll='ls -l'
 alias la='ls -A'
+alias lla='ls -la'
 
 alias vi="vim"
 
