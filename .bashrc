@@ -81,15 +81,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PYTHONPATH=${PYTHONPATH}:~/nao/pynaoqi-python2.7-2.1.2.17-linux64/
-
-# System C
-export SYSTEMC_HOME="~/systemc"
-
-# TinyOS
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${SYSTEMC_HOME}/lib-linux64
-if [ "x$TOS_ENV_UP" != 'x23' ]; then source ~/wsnpr/tos.env; fi
-
-export PROMPT_COMMAND="pwd > /tmp/whereami"
-
 export EDITOR=vim
