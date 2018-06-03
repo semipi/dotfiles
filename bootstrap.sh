@@ -29,7 +29,7 @@ git clone https://github.com/ranger/ranger.git
 cd ranger
 sudo make install
 
-sudo apt-get intall python-dev
+sudo apt-get install python-dev
 sudo pip install glances
 pip install --upgrade glances
 
