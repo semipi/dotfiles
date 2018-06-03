@@ -15,6 +15,7 @@ mkdir -p ~/dev/bootstrap
 cd ~/dev/bootstrap
 git clone https://github.com/semipi/conf.git
 
+sudo apt-get install vim
 cp .bash_aliases .vimrc ~
 cp .i3/config ~/.i3/config
 echo 'export EDITOR=vim' >> ~/.bashrc
