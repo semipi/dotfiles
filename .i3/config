@@ -167,7 +167,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+    status_command i3status --config ~/.i3/i3status.conf
 
 	colors {
         background          $bg
@@ -178,12 +178,11 @@ bar {
         inactive_workspace  $bg        $bg        $ia
         urgent_workspace    $rd        $bg        $ac
     }
-#	i3bar_command ~/.i3/lemonbar/i3_lemonbar.py
 }
 
 #sensible
 bindcode $mod+51 exec i3-sensible-terminal --working-directory=$(cat /tmp/whereami)
-# firefox 
+# firefox
 bindsym $mod+b exec firefox
 # file manager
 bindsym $mod+n exec i3-sensible-terminal -e ranger
