@@ -47,6 +47,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# PS1="\[\033[00;0;37m\]\u\[\033[01;0;37m\]:\[\033[00;0;37m\]\W\[\033[01;0;37m\]$ \[\e[0m\]"   
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 else
