@@ -34,3 +34,4 @@ sudo pip install glances
 pip install --upgrade glances
 
 sudo apt-get install vlc
+sudo apt-get install smbclient
