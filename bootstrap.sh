@@ -9,6 +9,8 @@ sudo apt-get install git
 sudo apt-get install texlive-full
 sudo apt-get install latex-beamer
 
+sudo apt-get install tree
+
 sudo apt-get install i3
 
 mkdir -p ~/dev/bootstrap
