@@ -9,6 +9,8 @@ sudo apt-get install git
 sudo apt-get install texlive-full
 sudo apt-get install latex-beamer
 
+sudo apt-get install cmake
+
 sudo apt-get install tree
 
 sudo apt-get install i3
@@ -37,3 +39,4 @@ pip install --upgrade glances
 
 sudo apt-get install vlc
 sudo apt-get install smbclient
+
