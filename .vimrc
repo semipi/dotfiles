@@ -40,8 +40,16 @@ hi LineNr ctermfg=0 ctermbg=8 cterm=NONE
 " cursor
 hi CursorColumn ctermbg=237 cterm=NONE
 hi CursorLine ctermbg=237 cterm=NONE
-set cursorline
-set cursorcolumn
+
+augroup activewindowcursorline
+    au!
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorcolumn
+    au WinLeave * setlocal nocursorline
+    au WinLeave * setlocal nocursorcolumn
+augroup end
+"set cursorline
+"set cursorcolumn
 
 "status line
 set laststatus=2
@@ -74,11 +82,6 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-"nmap <M-j> mz:m+<cr>`z
-"nmap <M-k> mz:m-2<cr>`z
-"map <M-j> :m'>+<cr>`<mzgv`yo`z
-"map <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
 " code completion / navigation
 inoremap <expr> <CR>        pumvisible() ? "\<C-y>" : "\<CR>"
 inoremap <expr> <C-j>       pumvisible() ? "\<C-n>" : "\<Down>"
@@ -107,15 +110,26 @@ endfunction
 command! TT call TrimTrailingWhitespaces()
 
 """"""""""""""""""""
-" MISC
+" NAVIGATION
 """"""""""""""""""""
+
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 20
+let g:netrw_list_hide = '.*\.swp$,^\.git\/$'
+
+augroup projecttree
+    autocmd!
+    autocmd VimEnter * :Vexplore
+    au FileType netrw au BufCreate <buffer> :set wfw
+augroup end
 
 """"""""""""""""""""
 " MISC
 """"""""""""""""""""
 
-"path
 set autochdir
-
 let c_no_curly_error = 1
 
