@@ -57,7 +57,6 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;37m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$ '
     PS1='${debian_chroot:+($debian_chroot)}\[\033[00;37m\]\u\[\033[01;37m\]:\[\033[00;37m\]\W\[\033[01;37m\]$\[\033[00;39m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
@@ -101,6 +100,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+function cd {
+    builtin cd "$@" && echo -e " \033[00;37m\u2514\u2500\033[00;39m " $(pwd)
+}
 
+export PATH=$PATH:"/usr/local/MATLAB/MATLAB_Production_Server/R2015a/bin"
 PROMPT_COMMAND='pwd > "/tmp/whereami"'
 export EDITOR=vim
