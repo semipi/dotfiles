@@ -10,10 +10,14 @@ alias ll='ls -l'
 alias la='ls -A'
 alias lla='ls -la'
 
-alias vi="vim"
+alias vi='vim'
+alias vix='vi -c \"Vex\"'
 
 alias :q='exit'
 alias :wq='exit'
+
+alias po='pdfopen'
+alias pdfopen='pdfopen --viewer evince'
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
