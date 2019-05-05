@@ -39,6 +39,7 @@ mv Pictures pictures
 cp ~/dev/dotfiles/.config/user-dirs.dirs ~/.config/user-dirs.dirs
 
 cd ~/dev/dotfiles
+sudo apt-get --assume-yes install emacs
 sudo apt-get --assume-yes install vim
 cp .bashrc .bash_aliases .vimrc ~
 mkdir ~/.i3
