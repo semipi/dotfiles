@@ -4,20 +4,28 @@
 #
 # run dist-upgrade, update and upgrade before.
 
+sudo apt-get update
+sudo apt-get upgrade
+
 sudo apt-get --assume-yes install git
 
-# sudo apt-get --assume-yes install texlive-full
-# sudo apt-get --assume-yes install latex-beamer
-
+sudo apt-get --assume-yes install g++
+sudo apt-get --assume-yes install build-essential
 sudo apt-get --assume-yes install cmake
+sudo apt-get --assume-yes install mesa-common-dev
+sudo apt-get --assume-yes install libglu1-mesa-dev
+sudo apt-get --assume-yes install libfontconfig1
+
+sudo apt-get --assume-yes install qt5-default
+sudo apt-get --assume-yes install qttools5-dev-tools
+sudo apt-get --assume-yes install libeigen3-dev
+
+sudo apt-get --assume-yes install texlive-full
+sudo apt-get --assume-yes install latex-beamer
+
 
 sudo apt-get --assume-yes install tree
-
 sudo apt-get --assume-yes install i3
-
-# mkdir -p ~/dev/bootstrap
-# cd ~/dev/bootstrap
-# git clone https://github.com/semipi/conf.git
 
 cd ~
 mv Downloads downloads
@@ -31,7 +39,7 @@ mv Pictures pictures
 cp ~/dev/dotfiles/.config/user-dirs.dirs ~/.config/user-dirs.dirs
 
 cd ~/dev/dotfiles
-sudo apt-get install vim
+sudo apt-get --assume-yes install vim
 cp .bashrc .bash_aliases .vimrc ~
 mkdir ~/.i3
 cp .i3/config ~/.i3/config
@@ -53,5 +61,8 @@ sudo pip install glances
 pip install --upgrade glances
 
 sudo apt-get --assume-yes install vlc
-sudo apt-get --assume-yes install smbclient
+sudo apt-get --assume-yes install samba
+sudo apt-get --assume-yes install cifs-utils
 
+
+sudo apt autoremove
