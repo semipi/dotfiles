@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# somewhat deamon network state icon
+# written by Nathaniel Maia, 2019
+
+wl=''
+eth=''
+dc='\/'
+
+[ -p /tmp/.network_status ] || mkfifo /tmp/.network_status
+
+# loop and dump info to the pipe
+while true; do
+        until { ping -c 1 'archlinux.org' || ping -c 1 'archlabslinux.com'; } >/dev/null 2>&1; do
+                for ((i=0; i < ${#dc}; i++)); do
+                        echo "${dc:$i:1}" >/tmp/.network_status # spinning character
+                        sleep 0.25
+                done
+        done
+
+        if ip link | grep -q '[0-9]:\se.*:.*state UP'; then
+                echo "$eth" >/tmp/.network_status
+        else
+                echo "$wl" >/tmp/.network_status
+        fi
+
+        sleep 300 # only recheck every 5m to save some cpu time
+done
