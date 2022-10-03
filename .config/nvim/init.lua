@@ -40,10 +40,10 @@ vim.opt.t_Co=256
 vim.cmd('hi LineNr ctermfg=0 ctermbg=8 cterm=NONE')
 
 -- cursor
-vim.opt('hi CursorColumn ctermbg=237 cterm=NONE')
-vim.opt('hi CursorLine ctermbg=237 cterm=NONE')
+vim.cmd('hi CursorColumn ctermbg=237 cterm=NONE')
+vim.cmd('hi CursorLine ctermbg=237 cterm=NONE')
 
-vim.opt([[
+vim.cmd([[
 augroup activewindowcursorline
     au!
     au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
@@ -57,13 +57,13 @@ augroup end
 
 --status line
 vim.opt.laststatus=2
-vim.opt('hi StatusLine ctermfg=220 ctermbg=8 cterm=NONE')
-vim.opt('hi StatusLineNC ctermfg=black ctermbg=8 cterm=NONE')
+vim.cmd('hi StatusLine ctermfg=220 ctermbg=8 cterm=NONE')
+vim.cmd('hi StatusLineNC ctermfg=black ctermbg=8 cterm=NONE')
 
-vim.opt('hi VertSplit ctermbg=0 ctermfg=8')
-vim.opt('hi ColorColumn ctermbg=8')
+vim.cmd('hi VertSplit ctermbg=0 ctermfg=8')
+vim.cmd('hi ColorColumn ctermbg=8')
 
-vim.opt('hi Search ctermbg=220 cterm=NONE')
+vim.cmd('hi Search ctermbg=220 cterm=NONE')
 
 -- line numbers
 vim.opt.number=true
