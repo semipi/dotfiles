@@ -37,6 +37,8 @@ modules-left   = i3
 modules-center = clock
 modules-right  = ${env:POLYBAR_MODULES:battery coreuse temperature memory pkg network volume}
 
+dpi = 96
+
 
 ;=====================================================
 ;     Bspwm Bars

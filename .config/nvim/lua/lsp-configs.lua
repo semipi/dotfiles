@@ -67,6 +67,8 @@ require('lspconfig').sumneko_lua.setup {
   },
 }
 
+require('lspconfig').ghcide.setup {}
+
 vim.opt.completeopt={'menu', 'menuone', 'noselect'}
 
 -- Setup nvim-cmp
